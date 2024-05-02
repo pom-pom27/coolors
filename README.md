@@ -1,6 +1,6 @@
 
 ## Screenshoot
-![image](https://github.com/pom-pom27/coolors/assets/40870452/9702f196-8530-40fc-9ae2-cb2135257fd9)
+![image](https://github.com/pom-pom27/coolors/assets/40870452/8f139d06-1db3-430e-a28d-e2cc096e4410)
 
 ## Getting Started
 
