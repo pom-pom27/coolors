@@ -21,7 +21,7 @@ bun dev
 ## Features
 - [x] Authentication with Clerk.
 - [x] Generate palettes.
-- [ ] Save selected palettes and color to database.
+- [ ] Save selected palettes and color to user database.
 - [ ] Exporting palettes as PNG, PDF and SVG.
 
 
