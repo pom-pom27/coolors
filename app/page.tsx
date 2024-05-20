@@ -83,7 +83,7 @@ export default function Home() {
                 <Link href="/sign-in"> Sign in to start generate.</Link>
               </motion.button>
             )}
-            <motion.button
+            {/* <motion.button
               initial="hidden"
               animate="visible"
               variants={BLUR_BUTTON_VARIANT}
@@ -91,7 +91,7 @@ export default function Home() {
               className="text-black w-full border border-[#d8d8da] font-semibold h-[46px] px-[21px] my-3 rounded-lg"
             >
               Explore trending palettes
-            </motion.button>
+            </motion.button> */}
           </div>
         </div>
       </motion.div>
