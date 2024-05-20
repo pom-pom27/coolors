@@ -3,7 +3,7 @@
 ](https://coollors.pages.dev/)
 
 ## Screenshot
-![image](https://github.com/pom-pom27/coolors/assets/40870452/8f139d06-1db3-430e-a28d-e2cc096e4410)
+![Screenshot_20-5-2024_112620_coollors pages dev](https://github.com/pom-pom27/coolors/assets/40870452/03aa8fed-88fa-4a11-8b38-af1ae6cbb13b)
 
 ## Getting Started
 
@@ -24,17 +24,17 @@ bun dev
 ## Features
 - [x] Authentication with Clerk.
 - [x] Generate palettes.
-- [ ] Save selected palettes and color to user database.
-- [ ] Exporting palettes as PNG, PDF and SVG.
+- [x] Save selected palettes and color to user database.
+- [x] Exporting palettes as PNG, PDF and SVG.
 
 
 ## Stack
 - Nextjs
-- Clerk
 - Tailwind
 - shadcn/UI
 - React Hook Form & Zod
 - Framer Motion
+- Clerk
 - Supabase
 
 
