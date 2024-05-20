@@ -6,6 +6,8 @@ import { useEffect } from "react";
 
 interface IPage {}
 
+export const runtime = "edge";
+
 const Page = ({}: IPage) => {
   const generateRandomColors = randomColor({
     hue: "random",
