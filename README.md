@@ -19,7 +19,6 @@ pnpm dev
 bun dev
 ```
 
-## WIP
 
 ## Features
 - [x] Authentication with Clerk.
