@@ -1,5 +1,7 @@
 import { SignIn } from "@clerk/nextjs";
 
+export const runtime = "edge";
+
 interface IPage {}
 
 const Page = ({}: IPage) => {
