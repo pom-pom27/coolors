@@ -15,6 +15,7 @@ export default function SavedPalettes({
 }) {
   const [SavedPalettes, setSavedPalettes] = useState<db[] | null>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,6 +26,7 @@ export default function SavedPalettes({
 
         setSavedPalettes(data);
       } catch (error) {
+        setIsError(true);
       } finally {
         setIsLoading(false);
       }
@@ -75,12 +77,13 @@ export default function SavedPalettes({
                 <div className="border-gray-300 h-10 w-10 animate-spin rounded-full border-2 border-t-black" />
               </div>
             ) : null}
+
             {!isLoading &&
               SavedPalettes?.map((palette) => {
                 return (
                   <section key={palette.id} className="opacity-0">
                     <Link
-                      href={`/color/${palette.colors}`}
+                      href={`/colors/${palette.colors}`}
                       className="flex  w-full item m-3"
                     >
                       {palette.colors?.split("-").map((i) => {
@@ -100,6 +103,7 @@ export default function SavedPalettes({
                   </section>
                 );
               })}
+            {isError && <div>Error occurred when fetching the list!</div>}
           </div>
         </div>
       </div>
@@ -128,7 +132,7 @@ export default function SavedPalettes({
               return (
                 <section key={palette.id} className="opacity-0">
                   <Link
-                    href={`/color/${palette.colors}`}
+                    href={`/colors/${palette.colors}`}
                     className="flex items  w-full m-3"
                   >
                     {palette.colors?.split("-").map((i) => {
