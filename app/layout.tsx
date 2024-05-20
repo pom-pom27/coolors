@@ -11,8 +11,8 @@ export const runtime = "edge";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Coolors",
-  description: "Best colors palettes generato!",
+  title: "Coollors",
+  description: "Best colors palettes generator!",
 };
 
 export default function RootLayout({
