@@ -1,4 +1,4 @@
-export const FADE_ANIMATION_VARIANTS = {
+export const FADE_DOWN_ANIMATION_VARIANTS = {
   hidden: { opacity: 0, y: -10 },
   show: {
     opacity: 1,
@@ -13,4 +13,14 @@ export const BLUR_BUTTON_VARIANT = {
     filter: "blur(0px)",
     opacity: 1,
   },
+};
+
+export const columnVariant = {
+  start: {},
+  show: {},
+};
+
+export const columnChildVariant = {
+  start: { opacity: 0 },
+  show: { opacity: 1 },
 };

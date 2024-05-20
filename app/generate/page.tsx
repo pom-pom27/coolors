@@ -22,7 +22,7 @@ const Page = ({}: IPage) => {
   useEffect(() => {
     setTimeout(() => {
       router.push(`/colors/${routeParams}`);
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (

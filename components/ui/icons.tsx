@@ -1,5 +1,3 @@
-import React from "react";
-
 type IconType = {
   currentColor: string;
 };
@@ -11,9 +9,9 @@ const CancelIcon = ({ currentColor }: IconType) => (
     height="24"
     viewBox="0 0 24 24"
     stroke={currentColor}
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="cursor-pointer hidden lg:block "
   >
     <path d="M18 6 6 18" />
@@ -28,8 +26,8 @@ const CopyIcon = ({ currentColor }: IconType) => (
     fill={currentColor}
     strokeWidth="0"
     viewBox="0 0 24 24"
-    height="1.5rem"
-    width="1.5rem"
+    height="24"
+    width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M7.024 3.75c0-.966.784-1.75 1.75-1.75H20.25c.966 0 1.75.784 1.75 1.75v11.498a1.75 1.75 0 0 1-1.75 1.75H8.774a1.75 1.75 0 0 1-1.75-1.75Zm1.75-.25a.25.25 0 0 0-.25.25v11.498c0 .139.112.25.25.25H20.25a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"></path>
@@ -88,53 +86,53 @@ const DragIcon = ({ currentColor }: IconType) => (
 
 // desktop svg
 <svg
-version="1.1"
-id="homepage_hero_image-mobile"
-xmlns="http://www.w3.org/2000/svg"
-xmlnsXlink="http://www.w3.org/1999/xlink"
-x="0px"
-y="0px"
-viewBox="0 0 498.94 301.86"
-xmlSpace="preserve"
+  version="1.1"
+  id="homepage_hero_image-mobile"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+  viewBox="0 0 498.94 301.86"
+  xmlSpace="preserve"
 >
-<path d="M450.79,288.72V20.22c0.1-7.6-6.1-13.9-13.8-14c0,0,0,0-0.1,0H59.59c-7.7,0.1-13.9,6.3-13.9,13.9c0,0,0,0,0,0.1v268.5 H450.79z"></path>
-<g id="homepage_hero-generator-laptop-mobile">
+  <path d="M450.79,288.72V20.22c0.1-7.6-6.1-13.9-13.8-14c0,0,0,0-0.1,0H59.59c-7.7,0.1-13.9,6.3-13.9,13.9c0,0,0,0,0,0.1v268.5 H450.79z"></path>
+  <g id="homepage_hero-generator-laptop-mobile">
+    <path
+      className="first"
+      d="M324.79,16.12h112c2.2,0,4,1.8,4,4v255h-116V16.12z"
+    ></path>
+    <rect
+      x="249.79"
+      y="16.12"
+      fill="yellow"
+      className="second"
+      width="115"
+      height="259"
+    ></rect>
+    <rect
+      x="171.79"
+      y="16.12"
+      fill="pink"
+      className=" third"
+      width="115"
+      height="259"
+    ></rect>
+    <rect
+      x="94.79"
+      y="16.12"
+      className=" fourth"
+      width="116"
+      height="259"
+    ></rect>
+    <path
+      fill="purple"
+      className=" fifth"
+      d="M59.79,16.12h74v259h-78v-255C55.79,17.92,57.59,16.12,59.79,16.12z"
+    ></path>
+  </g>
   <path
-    className="first"
-    d="M324.79,16.12h112c2.2,0,4,1.8,4,4v255h-116V16.12z"
+    fill="#c9c8cc"
+    d="M9.79,285.22h480l0,0c0,5.5-4.5,10-10,10h-460C14.29,295.22,9.79,290.72,9.79,285.22L9.79,285.22z"
   ></path>
-  <rect
-    x="249.79"
-    y="16.12"
-    fill="yellow"
-    className="second"
-    width="115"
-    height="259"
-  ></rect>
-  <rect
-    x="171.79"
-    y="16.12"
-    fill="pink"
-    className=" third"
-    width="115"
-    height="259"
-  ></rect>
-  <rect
-    x="94.79"
-    y="16.12"
-    className=" fourth"
-    width="116"
-    height="259"
-  ></rect>
-  <path
-    fill="purple"
-    className=" fifth"
-    d="M59.79,16.12h74v259h-78v-255C55.79,17.92,57.59,16.12,59.79,16.12z"
-  ></path>
-</g>
-<path
-  fill="#c9c8cc"
-  d="M9.79,285.22h480l0,0c0,5.5-4.5,10-10,10h-460C14.29,295.22,9.79,290.72,9.79,285.22L9.79,285.22z"
-></path>
-</svg>
-export { CopyIcon, LockIcon, CancelIcon, DragIcon, OpenIcon };
+</svg>;
+export { CancelIcon, CopyIcon, DragIcon, LockIcon, OpenIcon };

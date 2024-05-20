@@ -1,43 +1,106 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { BLUR_BUTTON_VARIANT, FADE_DOWN_ANIMATION_VARIANTS } from "@/variants";
 import { useSession } from "@clerk/nextjs";
+import { motion, useAnimate } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
+
+const getRandomColor = () => {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+};
 
 export default function Home() {
   const { isSignedIn, isLoaded } = useSession();
 
+  const [scope, animate] = useAnimate();
+
+  const animateWithRandomColors = async (target: string) => {
+    while (true) {
+      if (scope.current) {
+        const color = getRandomColor();
+
+        await animate(target, { fill: color }, { duration: 0.3, delay: 0.4 });
+      } else {
+        break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    animateWithRandomColors(".first");
+    animateWithRandomColors(".second");
+    animateWithRandomColors(".third");
+    animateWithRandomColors(".fourth");
+    animateWithRandomColors(".fifth");
+  }, []);
+
   return (
     <main className="flex  lg:gap-32 lg:flex-row flex-col-reverse items-center justify-around p-24">
-      <div className="w-[calc(100% -1100px + 180px)]">
+      <motion.div
+        className="w-[calc(100% -1100px + 180px)]"
+        initial="hidden"
+        viewport={{ once: true }}
+        animate="show"
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.15 } },
+        }}
+      >
         <div className="content">
-          <h1 className="lg:text-7xl text-4xl max-w-[500px] tracking-tight mx-auto font-black text-center mb-[30px]">
+          <motion.h1
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            className="lg:text-7xl text-4xl max-w-[500px] tracking-tight mx-auto font-black text-center mb-[30px]"
+          >
             The super fast color palettes generator!
-          </h1>
-          <p className="text-lg max-w-[400px] mb-[35px] mx-auto font-medium text-[#464853] text-center">
+          </motion.h1>
+          <motion.p
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            className="text-lg max-w-[400px] mb-[35px] mx-auto font-medium text-[#464853] text-center"
+          >
             Create the perfect palette or get inspired bu thousand of beautiful
             color schemes.
-          </p>
+          </motion.p>
 
           <div className="buttons w-[260px] mx-auto">
             {isSignedIn && isLoaded ? (
-              <Button className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white">
+              <motion.button
+                className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white"
+                initial="hidden"
+                animate="visible"
+                variants={BLUR_BUTTON_VARIANT}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
                 <Link href="/generate"> Start generate.</Link>
-              </Button>
+              </motion.button>
             ) : (
-              <Button className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white">
+              <motion.button
+                className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white"
+                initial="hidden"
+                animate="visible"
+                variants={BLUR_BUTTON_VARIANT}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <Link href="/sign-in"> Sign in to start generate.</Link>
-              </Button>
+              </motion.button>
             )}
-            <Button
-              variant={"outline"}
+            <motion.button
+              initial="hidden"
+              animate="visible"
+              variants={BLUR_BUTTON_VARIANT}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="text-black w-full border border-[#d8d8da] font-semibold h-[46px] px-[21px] my-3 rounded-lg"
             >
               Explore trending palettes
-            </Button>
+            </motion.button>
           </div>
         </div>
-      </div>
-      <div className="w-2/4 min-w-72 xl:py-32 p-2 lg:mb-0 mb-10 xl:mt-0 lg:mt-32 mt-5">
+      </motion.div>
+      <motion.div
+        ref={scope}
+        className="w-2/3 min-w-72 xl:py-32 p-2 lg:mb-0 mb-10 xl:mt-0 lg:mt-32 mt-5"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <svg
           version="1.1"
           id="homepage_hero_image-mobile"
@@ -93,7 +156,7 @@ export default function Home() {
             d="M9.79,285.22h480l0,0c0,5.5-4.5,10-10,10h-460C14.29,295.22,9.79,290.72,9.79,285.22L9.79,285.22z"
           ></path>
         </svg>
-      </div>
+      </motion.div>
     </main>
   );
 }
