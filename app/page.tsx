@@ -2,7 +2,7 @@
 import { BLUR_BUTTON_VARIANT, FADE_DOWN_ANIMATION_VARIANTS } from "@/variants";
 import { useSession } from "@clerk/nextjs";
 import { motion, useAnimate } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const getRandomColor = () => {
@@ -13,6 +13,8 @@ export default function Home() {
   const { isSignedIn, isLoaded } = useSession();
 
   const [scope, animate] = useAnimate();
+
+  const router = useRouter();
 
   const animateWithRandomColors = async (target: string) => {
     while (true) {
@@ -68,19 +70,21 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={BLUR_BUTTON_VARIANT}
-                transition={{ duration: 1, delay: 0.5 }}
+                onClick={() => router.push("/generate")}
+                transition={{ duration: 1, delay: 0.3 }}
               >
-                <Link href="/generate"> Start generate.</Link>
+                Start generate.
               </motion.button>
             ) : (
               <motion.button
-                className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white"
+                className="bg-[#0066ff] h-[46px] px=[21px] my-3 rounded-lg hover:bg-[#0066ff] w-full text-white relative"
                 initial="hidden"
                 animate="visible"
                 variants={BLUR_BUTTON_VARIANT}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                onClick={() => router.push("/sign-in")}
+                transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <Link href="/sign-in"> Sign in to start generate.</Link>
+                Sign in to start generate.
               </motion.button>
             )}
             {/* <motion.button
