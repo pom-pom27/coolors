@@ -5,6 +5,8 @@ import { motion, useAnimate } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
+export const runtime = "edge";
+
 const getRandomColor = () => {
   return "#" + Math.floor(Math.random() * 16777215).toString(16);
 };

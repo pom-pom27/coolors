@@ -16,6 +16,8 @@ import { useRouter } from "next/navigation";
 import randomColor from "randomcolor";
 import { usePDF } from "react-to-pdf";
 
+export const runtime = "edge";
+
 extend([namesPlugin]);
 
 export default function Page({
