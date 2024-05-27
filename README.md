@@ -3,7 +3,7 @@
 ](https://coollors1.vercel.app/)
 
 ## Screenshot
-![Screenshot_20-5-2024_112620_coollors pages dev](https://github.com/pom-pom27/coolors/assets/40870452/03aa8fed-88fa-4a11-8b38-af1ae6cbb13b)
+![Screenshot_27-5-2024_214813_coollors1 vercel app](https://github.com/pom-pom27/coolors/assets/40870452/74dae114-278d-4e05-8d0c-9556330b91db)
 
 ## Getting Started
 
