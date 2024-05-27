@@ -1,6 +1,6 @@
 ## Live Site
-[coollors.pages.dev
-](https://coollors.pages.dev/)
+[coollors1.vercel.app
+](https://coollors1.vercel.app/)
 
 ## Screenshot
 ![Screenshot_20-5-2024_112620_coollors pages dev](https://github.com/pom-pom27/coolors/assets/40870452/03aa8fed-88fa-4a11-8b38-af1ae6cbb13b)
